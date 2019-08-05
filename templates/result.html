@@ -1,0 +1,387 @@
+{% extends "base.html" %}
+
+
+{% block head %}
+  {{ super() }}
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<!-- for geoarr init -->
+
+<!-- for geoarr init -->
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin=""/>
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+  integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+  crossorigin=""></script>
+
+
+  <link rel="stylesheet" href="./static/lib/css//bootstrap.min.css">
+  <link rel="stylesheet" href="./static/lib/css/keen-dashboards.css">
+  <!-- <link rel="stylesheet" href="./static/lib/css/dc.css"> -->
+  <link rel="stylesheet" href="./static/lib/js/test/dc.css">
+  <link rel="stylesheet" href="./static/css/custom.css">
+  <!-- Include CARTO.js -->
+  <script src="https://libs.cartocdn.com/carto.js/v4.1.11/carto.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:600" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://carto.com/developers/carto-js/examples/maps/public/style.css" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+  <div class="application">
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-sm-6">
+        <div class="row">
+
+          <!-- Time Chart -->
+          <div class="col-sm-12">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                Number of GUN VIOLENCE
+              </div>
+              <div class="chart-stage">
+                <div id="time-chart"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-8">
+            <div class="chart-wrapper">
+            <div class="chart-title">
+                total accident in neighborhood
+            </div>
+            <div id="pie_for_totall_accient_foreach_zipcode">
+            </div>
+            </div>
+          </div>
+
+          <div class="col-sm-8">
+            <div class="chart-wrapper">
+            <div class="chart-title">
+                Median Household Income in neighborhood
+            </div>
+            <div id="pie_for_income">
+            </div>
+            </div>
+          </div>
+
+          <div class="col-sm-8">
+            <div class="chart-wrapper">
+            <div class="chart-title">
+                Median house value in neighborhood
+            </div>
+            <div id="pie_for_house_value">
+            </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="col-sm-6">
+
+        <div class="container">
+          <div class="row">
+          <div class="chart-wrapper">
+            <div class="chart-title">
+              Killed Ranking Tables
+            </div>
+            <div class="chart-stage">
+              <div id="killed"></div>
+            </div>
+          </div>
+
+          <div class="chart-wrapper">
+            <div class="chart-title">
+              accident/total population per zipcode
+            </div>
+            <div class="chart-stage">
+          <div id="pie_for_428_new_pie"></div>
+          </div>
+          </div>
+          </div>
+        </div>
+        <div class="chart-wrapper">
+          <div class="chart-title">
+              Accident distribution in nearby zipcode
+          </div>
+          <div class="chart-stage">
+            <!-- <div id="us-chart"></div> -->
+            <div id="mapid" style="width: 559px; height: 400px;"></div>
+          </div>
+      <!-- Map -->
+
+      <!-- Metric 1 -->
+
+      <!-- Metric 1 -->
+
+      <!-- Metric 2 -->
+
+      <!-- Metric 2 -->
+
+      <!-- Metric 3 -->
+
+
+
+
+
+
+      <!-- <div class="col-sm-6">
+
+      </div> -->
+
+      <!-- Metric 3 -->
+
+
+      <!-- Metric 4 -->
+
+      <!-- Metric 4 -->
+
+    </div>
+
+    <div class="dc-date-count" style = "float:left;">
+        <a href="javascript:dc.filterAll();dc.renderAll();">Reset All</a>
+      </h2>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="chart-wrapper">
+        <div class="chart-title">
+          Total injured
+        </div>
+        <div class="chart-stage">
+          <div id="total-injured-nd"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="chart-wrapper">
+        <div class="chart-title">
+          Total killed
+        </div>
+        <div class="chart-stage">
+          <div id="total-donations-nd"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="chart-wrapper">
+        <div class="chart-title">
+          Total Gun-Vio
+        </div>
+        <div class="chart-stage">
+          <div id="number-projects-nd"></div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <script src="./static/lib/js/jquery.min.js"></script>
+  <script src="./static/lib/js/bootstrap.min.js"></script>
+  <!-- <script src="./static/lib/js/crossfilter.js"></script> -->
+  <!-- <script src="./static/lib/js/d3.js"></script> -->
+  <!-- <script src="./static/lib/js/dc.js"></script> -->
+  <script src="./static/lib/js/queue.js"></script>
+  <!-- <script src="http://d3js.org/queue.v1.min.js"></script> -->
+  <script src="./static/lib/js/keen.min.js"></script>
+
+
+  <!-- <script src="https://d3js.org/d3.v5.js"></script> -->
+  <script src="./static/lib/js/test/promise-polyfill.js"></script>
+  <script src="./static/lib/js/test/fetch.umd.js"></script>
+  <script src="./static/lib/js/test/d3.js"></script>
+  <script src="./static/lib/js/test/crossfilter.js"></script>
+  <script src="./static/lib/js/test/dc.js"></script>
+
+
+
+  <script src='./static/js/zipinfo.js' type='text/javascript'></script>
+
+
+
+
+
+
+  </div>
+
+  <style type='text/css'>
+      .text-labels {
+      font-size: 1em;
+      font-weight: 700;
+      /* Use color, background, set margins for offset, etc */
+  }
+
+
+  .my-legend .legend-title {
+    text-align: left;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 90%;
+    }
+  .my-legend .legend-scale ul {
+    margin: 0;
+    padding: 0;
+    float: left;
+    list-style: none;
+    }
+  .my-legend .legend-scale ul li {
+    display: block;
+    float: left;
+    width: 50px;
+    margin-bottom: 6px;
+    text-align: center;
+    font-size: 80%;
+    list-style: none;
+    }
+  .my-legend ul.legend-labels li span {
+    display: block;
+    float: left;
+    height: 15px;
+    width: 50px;
+    }
+  .my-legend .legend-source {
+    font-size: 70%;
+    color: #999;
+    clear: both;
+    }
+  .my-legend a {
+    color: #777;
+    }
+  </style>
+
+
+
+
+<!-- read local location json file -->
+<script type="text/javascript">
+    var myGeocode = [40.7831,-73.985130];
+    var input = {{result['Area']|tojson}}
+    var lonlat = document.getElementById('lonlat');
+    console.log('&&&&&&&',input);
+    var xhr = $.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + input + '&key=AIzaSyAl1n9grfDTDBHCHX8rlfyo4QKv_uuz4E4');
+
+    Promise.all([
+      d3.json("./static/second/location.json"),
+      d3.json("./static/second/onlynearzip.json"),
+      d3.json("./static/second/zip_loc.json"),
+      d3.json("./static/second/aggregat_ecount_foreach_zipcode.json"),
+      xhr.done(function(data) {
+      })
+    ]).then(function(read_data){
+      data = read_data[0]
+      ziparray = read_data[1]
+      zipcode_detail_array = read_data[2]
+      aggre_for_each_zipcode = read_data[3]
+      var myGeocode = []
+      myGeocode[0] = read_data[4].results[0].geometry.location.lat;
+      myGeocode[1] = read_data[4].results[0].geometry.location.lng;
+      // console.log('what !!!!',myGeocode)
+      mapDisplay(myGeocode,data,ziparray,zipcode_detail_array,aggre_for_each_zipcode);
+
+
+    })
+
+
+
+</script>
+<script type="text/javascript">
+
+    function mapDisplay(myGeocode,data,ziparray,zipcode_detail_array,aggre_for_each_zipcode){
+      for(var i = 0; i < ziparray.length;i++){
+        if(ziparray[i].toString().length <5){
+          ziparray[i] = '0'+ ziparray[i];
+        }
+        ziparray[i] = "'"+ziparray[i]+"'";
+      }
+
+      // console.log(ziparray)
+      var mymap = L.map('mapid').setView([myGeocode[0], myGeocode[1]], 11);
+      L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+        maxZoom: 15,
+      }).addTo(mymap);
+      const client = new carto.Client({
+      apiKey: 'f5a9e0398003a5741b1dd6ab8f35950b2c581be6',
+      username: '454400098'
+    });
+     const Dataset = new carto.source.SQL(`SELECT * FROM out WHERE geoid10 In (`+ziparray.join(',')+`)`,{
+     //const Dataset = new carto.source.SQL(`SELECT * FROM out WHERE geoid10 In (`+"''" +test2.join("',''")+"''"+`)`,{
+       apiKey: 'f5a9e0398003a5741b1dd6ab8f35950b2c581be6',
+       username: '454400098'
+     });
+
+    // console.log('just boundary data is',Dataset);
+
+
+   var color_light_to_darker = ["#ffebe6","#ffad99","#ff704d","#ff3300","#b32400","#661400","#330a00"]
+
+
+   const style = new carto.style.CartoCSS(`
+     #out  {polygon-fill: #7bd490;
+            polygon-opacity: 0.7;
+            line-color: black;
+            line-width: 1;
+            line-opacity: 1;
+          }
+   `);
+
+    const layer = new carto.layer.Layer(Dataset, style);
+    client.addLayer(layer);
+    client.getLeafletLayer().addTo(mymap);
+
+    // loop to make make marker
+    var i;
+    // console.log(data);
+    for(i = 0; i < data.length;i++){
+        L.circle([data[i]['latitude'],data[i]['longitude']],{
+          color: 'red',
+          fillColor: '#f03',
+          fillOpacity: 0.5,
+          radius: 50
+      })
+      .bindPopup(data[i]['source_url'])
+      .addTo(mymap);
+
+    }
+
+    for (var i = 0; i < zipcode_detail_array.length;i++){
+      var zipname = zipcode_detail_array[i]['GEOID'];
+      if(zipname.toString().length <5){
+        zipname =  ziparray[i].toString();
+      }
+
+     L.marker([zipcode_detail_array[i]['latitude'],zipcode_detail_array[i]['longitude']], {
+          icon: L.divIcon({
+              className: 'text-labels',   // Set class for CSS styling
+              html: zipname
+          }),
+          // draggable: true,       // Allow label dragging...?
+          zIndexOffset: 1000     // Make appear above other map features
+      }).addTo(mymap);
+    }
+}
+
+</script>
+
+{% endblock %}

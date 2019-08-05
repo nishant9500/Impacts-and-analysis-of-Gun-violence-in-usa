@@ -1,0 +1,61 @@
+{% extends "bootstrap/base.html" %}
+
+
+{% block head %}
+    {{ super() }}
+
+{% endblock %}
+
+<!-- for nav bar -->
+{% block navbar %}
+<nav class="navbar navbar-expand-sm navbar-light bg-light" style="background: #648880 ;
+  background: linear-gradient(to right, #293f37, #293f50, #293f50)"  >
+<a class="navbar-brand"  href="javascript:dc.filterAll();dc.renderAll();" style="margin:20px auto; text-align:left"><h6 style="color: blue"><b>Reset All</b></h6></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" style="  background: linear-gradient(to right, #293f37, #293f50, #293f50) "   >
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a  class="nav-link" href="/" style="margin:20px auto; text-align:left"><h4 style="color:white"><b>Home</b></h4> <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about" style="margin:20px auto; text-align:right"><h4><b>Search</b></h4></a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="/trends" style="margin:20px auto; text-align:right"><h4><b>Trends</b></h4></a>
+      </li>
+	  <br>
+
+
+
+
+
+    </ul>
+
+  </div>
+</nav>
+<style>
+h4{
+color:white
+}
+</style>
+{% endblock %}
+
+
+
+
+{% block content %}
+    <!-- <div class="container">
+        {% block page_content %}{% endblock %}
+    </div>
+    <div class="mapcontainer">
+      {% block map %}{% endblock %}
+    </div> -->
+
+{% endblock %}

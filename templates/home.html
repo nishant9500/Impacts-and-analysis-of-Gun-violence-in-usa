@@ -1,0 +1,231 @@
+{% extends "base.html" %}
+
+{% block head %}
+  {{ super() }}
+  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}"> -->
+  <!-- <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://d3js.org/topojson.v2.min.js"></script> -->
+
+
+  <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
+
+
+
+  <link rel="stylesheet" href="./static/lib/css//bootstrap.min.css">
+  <link rel="stylesheet" href="./static/lib/css/keen-dashboards.css">
+  <link rel="stylesheet" href="./static/lib/css/dc.css">
+  <link rel="stylesheet" href="./static/css/custom.css">
+
+  <script src="./static/lib/js/d3.js"></script>
+
+{% endblock %}
+
+<body>
+{% block content %}
+  <div class="application" style="background: #648880;
+  background: linear-gradient(to right, #293f37, #293f50, #293f50)"  >
+    <!-- <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="./"> Dashboard</a>
+      </div>
+    </div>
+  </div> -->
+
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-sm-6">
+        <div class="row">
+
+          <!-- Time Chart -->
+
+          <!-- Time Chart -->
+
+          <!-- Resources Pie -->
+          <div class="col-sm-14">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                <div class='legend-title'><b>Number of Victims</b></div>
+
+
+              </div>
+              <div class="chart-stage">
+                <div id="victim-chart"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- Metric 1 -->
+        <div class="row">
+        <div class="col-sm-3" >
+          <div class="chart-wrapper" style="background-image: linear-gradient(to bottom, #ffffff 0%, #ff3300 100%);">
+            <div class="chart-title">
+              <b>Total Number of Incidents</b>
+            </div>
+            <div class="chart-stage">
+              <div id="number-projects-nd"></div>
+            </div>
+          </div>
+      </div>
+
+        <!-- Metric 1 -->
+
+        <!-- Metric 2 -->
+        <div class="col-sm-3" >
+          <div class="chart-wrapper" style="background-image: linear-gradient(to bottom, #ffffff 0%, #ff3300 100%);"  >
+            <div class="chart-title">
+              <b>Total number of people killed </b>
+            </div>
+            <div class="chart-stage">
+              <div id="total-donations-nd"></div>
+            </div>
+          </div>
+      </div>
+
+        <!-- Metric 2 -->
+
+        <!-- Metric 3 -->
+        <div class="col-sm-3" >
+          <div class="chart-wrapper" style="background-image: linear-gradient(to bottom, #ffffff 0%, #ff3300 100%);">
+            <div class="chart-title">
+             <b> Total number of people injured </b>
+            </div>
+            <div class="chart-stage">
+              <div id="total-injured-nd"></div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      </div>
+      <!-- Map -->
+      <div class="col-sm-6">
+
+
+      <div class="chart-stage">
+          <div id="us-chart"></div>
+				  	<div class='my-legend'>
+            <div class='legend-title'>Distribution of Gun Violence</div>
+            <div class='legend-scale'>
+            <ul class='legend-labels'>
+              <li><span style='background:#ffcccc;'></span></li>
+              <li><span style='background:#ff3333;'></span></li>
+              <li><span style='background:#e60000;'></span></li>
+              <li><span style='background:#cc0000;'></span></li>
+              <li><span style='background:#660000;'></span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map -->
+
+
+
+
+      <!-- Metric 3 -->
+    </div>
+
+    <div class="col-sm-14" >
+      <div class="chart-wrapper">
+        <div class="chart-title" >
+          <b>Number of Gun Violence Incidents</b>
+        </div>
+        <div class="chart-stage">
+          <div id="time-chart" ></div>
+        </div>
+      </div>
+    </div>
+
+<div class="container">
+    <iframe width="100%" height="520" frameborder="0" src="https://454400098.carto.com/builder/10733771-124f-4a56-aecf-10da5343be14/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+  </div>
+
+  </div>
+
+
+
+
+<!--
+<svg width = "960" height = "600" id="svg1">
+
+</svg>
+
+<script type="text/javascript">
+  var svg = d3.select("#svg1")
+
+    .append("svg")
+    .attr("width", "100%")
+    .attr("height", "100%")
+    .call(d3.behavior.zoom().on("zoom", function () {
+      svg.attr("transform", "translate(" + d3.event.translate + ")" + " scale(" + d3.event.scale + ")")
+    }))
+    .append("g")
+
+  svg.append("circle")
+    .attr("cx", document.body.clientWidth / 2)
+    .attr("cy", document.body.clientHeight / 2)
+    .attr("r", 50)
+    .style("fill", "#B8DEE6")
+</script> -->
+
+
+  <script src="./static/lib/js/jquery.min.js"></script>
+  <script src="./static/lib/js/bootstrap.min.js"></script>
+  <script src="./static/lib/js/crossfilter.js"></script>
+
+  <script src="./static/lib/js/dc.js"></script>
+  <script src="./static/lib/js/queue.js"></script>
+  <!-- <script src="http://d3js.org/queue.v1.min.js"></script> -->
+  <script src="./static/lib/js/keen.min.js"></script>
+  <script src='./static/js/graphs.js' type='text/javascript'></script>
+
+
+</div>
+</div>
+<style type='text/css'>
+  .my-legend .legend-title {
+    text-align: left;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 90%;
+    }
+  .my-legend .legend-scale ul {
+    margin: 0;
+    padding: 0;
+    float: left;
+    list-style: none;
+    }
+  .my-legend .legend-scale ul li {
+    display: block;
+    float: left;
+    width: 50px;
+    margin-bottom: 6px;
+    text-align: center;
+    font-size: 80%;
+    list-style: none;
+    }
+  .my-legend ul.legend-labels li span {
+    display: block;
+    float: left;
+    height: 15px;
+    width: 50px;
+    }
+  .my-legend .legend-source {
+    font-size: 70%;
+    color: #999;
+    clear: both;
+    }
+  .my-legend a {
+    color: #777;
+    }
+	div{
+	background: linear-gradient(to top, #ffffff 0%, #ffffff 100%);
+	}
+</style>
+{% endblock %}

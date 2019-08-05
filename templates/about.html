@@ -1,0 +1,80 @@
+
+{% extends "base.html" %}
+{{ super() }}
+
+<!-- {% block head %}
+  {{ super() }}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+{% endblock %} -->
+
+{% block content %}
+
+<link rel="stylesheet" href="./static/lib/css//bootstrap.min.css">
+
+
+
+
+<!-- <form  id = "zipform" action = "/first1/zipfilter" method = "POST">
+  <div class="form-group">
+    <p id = "test" >Zip_code <input type="test" name="Area" value=""></p>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form> -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+$(function() {
+  $('form').submit(function(data) {
+    $.post('/first1/zipfilter', $(this).serialize());
+  });
+});
+</script>
+
+<div class ="container" style="background: #648880;
+  background-image: linear-gradient(to bottom, #66ccff 0%, #000066 100%);">
+
+  <div class="row">
+    <div class = "search"
+    <p class = "head">Find the safest area near a zipcode</p>
+    <!-- <div class="col-md-6 col-md-offset-6"> -->
+      <form class="formcalss" action="/result" method="post">
+        <input type="test" name="Area" value="">
+        <input type="submit" value="Submit" class="btn btn-primary">
+      </form>
+    </div>
+  </div>
+<div class="row">
+
+<div class="container">
+  <iframe width="100%" height="520" frameborder="0" src="https://454400098.carto.com/builder/df7b759b-32da-4a20-a143-e33442532197/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+</div>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<style type='text/css'>
+  /* .h1{
+    align-items:center
+  }
+  */
+  .search{
+    margin: auto;
+  }
+  div{
+	background: linear-gradient(to top, #ffffff 0%, #ffffff 100%);
+	}
+</style>
+
+
+
+
+
+  <script src="./static/lib/js/crossfilter.js"></script>
+  <script src='./static/js/learn_crossfilter.js' type='text/javascript'></script>
+{% endblock %}

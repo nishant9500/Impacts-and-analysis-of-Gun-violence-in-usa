@@ -1,0 +1,262 @@
+[
+  {
+    "NAME": "Alabama",
+    "Total Population": 4850771,
+    "Poor People": 69693
+  },
+  {
+    "NAME": "Alaska",
+    "Total Population": 738565,
+    "Poor People": 4868
+  },
+  {
+    "NAME": "Arizona",
+    "Total Population": 6809946,
+    "Poor People": 86381
+  },
+  {
+    "NAME": "Arkansas",
+    "Total Population": 2977944,
+    "Poor People": 39586
+  },
+  {
+    "NAME": "California",
+    "Total Population": 38982847,
+    "Poor People": 380377
+  },
+  {
+    "NAME": "Colorado",
+    "Total Population": 5436519,
+    "Poor People": 40818
+  },
+  {
+    "NAME": "Connecticut",
+    "Total Population": 3594478,
+    "Poor People": 27399
+  },
+  {
+    "NAME": "Delaware",
+    "Total Population": 943732,
+    "Poor People": 8685
+  },
+  {
+    "NAME": "District of Columbia",
+    "Total Population": 672391,
+    "Poor People": 8076
+  },
+  {
+    "NAME": "Florida",
+    "Total Population": 20278447,
+    "Poor People": 214804
+  },
+  {
+    "NAME": "Georgia",
+    "Total Population": 10201635,
+    "Poor People": 134708
+  },
+  {
+    "NAME": "Hawaii",
+    "Total Population": 1421658,
+    "Poor People": 9616
+  },
+  {
+    "NAME": "Idaho",
+    "Total Population": 1657375,
+    "Poor People": 15316
+  },
+  {
+    "NAME": "Illinois",
+    "Total Population": 12854526,
+    "Poor People": 127307
+  },
+  {
+    "NAME": "Indiana",
+    "Total Population": 6614418,
+    "Poor People": 71534
+  },
+  {
+    "NAME": "Iowa",
+    "Total Population": 3118102,
+    "Poor People": 24527
+  },
+  {
+    "NAME": "Kansas",
+    "Total Population": 2903820,
+    "Poor People": 24229
+  },
+  {
+    "NAME": "Kentucky",
+    "Total Population": 4424376,
+    "Poor People": 63964
+  },
+  {
+    "NAME": "Louisiana",
+    "Total Population": 4663461,
+    "Poor People": 70776
+  },
+  {
+    "NAME": "Maine",
+    "Total Population": 1330158,
+    "Poor People": 10667
+  },
+  {
+    "NAME": "Maryland",
+    "Total Population": 5996079,
+    "Poor People": 41683
+  },
+  {
+    "NAME": "Massachusetts",
+    "Total Population": 6789319,
+    "Poor People": 55391
+  },
+  {
+    "NAME": "Michigan",
+    "Total Population": 9925568,
+    "Poor People": 114278
+  },
+  {
+    "NAME": "Minnesota",
+    "Total Population": 5490726,
+    "Poor People": 35751
+  },
+  {
+    "NAME": "Mississippi",
+    "Total Population": 2986220,
+    "Poor People": 54137
+  },
+  {
+    "NAME": "Missouri",
+    "Total Population": 6075300,
+    "Poor People": 62946
+  },
+  {
+    "NAME": "Montana",
+    "Total Population": 1029862,
+    "Poor People": 9788
+  },
+  {
+    "NAME": "Nebraska",
+    "Total Population": 1893921,
+    "Poor People": 15448
+  },
+  {
+    "NAME": "Nevada",
+    "Total Population": 2887725,
+    "Poor People": 29121
+  },
+  {
+    "NAME": "New Hampshire",
+    "Total Population": 1331848,
+    "Poor People": 6841
+  },
+  {
+    "NAME": "New Jersey",
+    "Total Population": 8960161,
+    "Poor People": 72423
+  },
+  {
+    "NAME": "New Mexico",
+    "Total Population": 2084828,
+    "Poor People": 31864
+  },
+  {
+    "NAME": "New York",
+    "Total Population": 19798228,
+    "Poor People": 212874
+  },
+  {
+    "NAME": "North Carolina",
+    "Total Population": 10052564,
+    "Poor People": 120589
+  },
+  {
+    "NAME": "North Dakota",
+    "Total Population": 745475,
+    "Poor People": 5989
+  },
+  {
+    "NAME": "Ohio",
+    "Total Population": 11609756,
+    "Poor People": 137590
+  },
+  {
+    "NAME": "Oklahoma",
+    "Total Population": 3896251,
+    "Poor People": 46608
+  },
+  {
+    "NAME": "Oregon",
+    "Total Population": 4025127,
+    "Poor People": 38578
+  },
+  {
+    "NAME": "Pennsylvania",
+    "Total Population": 12790505,
+    "Poor People": 117605
+  },
+  {
+    "NAME": "Rhode Island",
+    "Total Population": 1056138,
+    "Poor People": 9590
+  },
+  {
+    "NAME": "South Carolina",
+    "Total Population": 4893444,
+    "Poor People": 65095
+  },
+  {
+    "NAME": "South Dakota",
+    "Total Population": 855444,
+    "Poor People": 8246
+  },
+  {
+    "NAME": "Tennessee",
+    "Total Population": 6597381,
+    "Poor People": 84540
+  },
+  {
+    "NAME": "Texas",
+    "Total Population": 27419612,
+    "Poor People": 315583
+  },
+  {
+    "NAME": "Utah",
+    "Total Population": 2993941,
+    "Poor People": 21591
+  },
+  {
+    "NAME": "Vermont",
+    "Total Population": 624636,
+    "Poor People": 4540
+  },
+  {
+    "NAME": "Virginia",
+    "Total Population": 8365952,
+    "Poor People": 68978
+  },
+  {
+    "NAME": "Washington",
+    "Total Population": 7169967,
+    "Poor People": 59146
+  },
+  {
+    "NAME": "West Virginia",
+    "Total Population": 1836843,
+    "Poor People": 25305
+  },
+  {
+    "NAME": "Wisconsin",
+    "Total Population": 5763217,
+    "Poor People": 45481
+  },
+  {
+    "NAME": "Wyoming",
+    "Total Population": 583200,
+    "Poor People": 4448
+  },
+  {
+    "NAME": "Puerto Rico",
+    "Total Population": 3468963,
+    "Poor People": 190223
+  }
+]

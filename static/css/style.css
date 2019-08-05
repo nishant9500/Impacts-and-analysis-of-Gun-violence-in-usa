@@ -1,0 +1,7 @@
+#mapid { height: 180px; }
+
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
